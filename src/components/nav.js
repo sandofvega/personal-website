@@ -8,6 +8,7 @@ import { Menu } from '@components';
 import { IconLogo } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
+
 const { colors, fontSizes, fonts } = theme;
 
 const NavContainer = styled.header`
@@ -238,7 +239,7 @@ class Nav extends Component {
             {isMounted && (
               <CSSTransition classNames="fade" timeout={3000}>
                 <Logo>
-                  <LogoLink href="/" aria-label="home">
+                  <LogoLink aria-label="home">
                     <IconLogo />
                   </LogoLink>
                 </Logo>

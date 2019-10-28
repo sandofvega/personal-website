@@ -12,6 +12,7 @@ import {
 import { socialMedia } from '@config';
 import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
+
 const { colors, fontSizes, fonts } = theme;
 
 const FooterContainer = styled.footer`
