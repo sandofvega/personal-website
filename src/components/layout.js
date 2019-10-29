@@ -106,11 +106,11 @@ const Layout = ({ children, location }) => {
             <Loader finishLoading={() => setIsLoading(false)} />
           ) : (
             <div className="container">
-              {/*<Nav />*/}
-              {/*<Social />*/}
-              {/*<Email />*/}
+              <Nav />
+              <Social />
+              <Email />
               {children}
-              {/*<Footer githubInfo={githubInfo} />*/}
+              <Footer githubInfo={githubInfo} />
             </div>
           )}
         </div>

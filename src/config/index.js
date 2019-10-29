@@ -23,10 +23,6 @@ module.exports = {
       url: 'https://www.linkedin.com/in/sandofvega',
     },
     {
-      name: 'Codepen',
-      url: 'https://codepen.io/sandofvega',
-    },
-    {
       name: 'Instagram',
       url: 'https://www.instagram.com/sandofvega',
     },
@@ -37,7 +33,7 @@ module.exports = {
   ],
 
   navLinks: [
-    {
+    /*{
       name: 'About',
       url: '/#about',
     },
@@ -52,7 +48,7 @@ module.exports = {
     {
       name: 'Contact',
       url: '/#contact',
-    },
+    },*/
   ],
 
   navHeight: 100,

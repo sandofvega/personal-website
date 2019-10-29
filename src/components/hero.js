@@ -67,7 +67,7 @@ const Hero = ({ data }) => {
   const { frontmatter, html } = data[0].node;
 
   const one = () => <Hi style={{ transitionDelay: '100ms' }}>{frontmatter.title}</Hi>;
-  const two = () => <Name style={{ transitionDelay: '200ms' }}>{frontmatter.name}.</Name>;
+  const two = () => <Name style={{ transitionDelay: '200ms' }}>{frontmatter.name}</Name>;
   const three = () => (
     <Subtitle style={{ transitionDelay: '300ms' }}>{frontmatter.subtitle}</Subtitle>
   );
