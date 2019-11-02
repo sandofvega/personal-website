@@ -2,11 +2,11 @@
 title: 'About Me'
 avatar: './me.jpg'
 skills:
-  - JavaScript (ES6+)
   - HTML & (S)CSS
-  - React
+  - JavaScript (ES6+)
+  - Laravel
   - Vue
-  - Node.js
+  - Nuxtjs
   - Express
   - GraphQL
   - NativeScript
