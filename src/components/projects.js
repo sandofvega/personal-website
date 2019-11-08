@@ -192,9 +192,9 @@ const Projects = ({ data }) => {
         </TransitionGroup>
       </ProjectsGrid>
 
-      <ShowMoreButton onClick={() => setShowMore(!showMore)}>
+      {/*<ShowMoreButton onClick={() => setShowMore(!showMore)}>
         {showMore ? 'Fewer' : 'More'} Projects
-      </ShowMoreButton>
+      </ShowMoreButton>*/}
     </ProjectsContainer>
   );
 };

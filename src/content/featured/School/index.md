@@ -1,5 +1,5 @@
 ---
-date: '01'
+date: '99'
 title: 'School Management'
 cover: './screenshot.png'
 github: ''
@@ -11,4 +11,4 @@ tech:
 show: 'true'
 ---
 
-A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.
+A solution for managing student information. Here admin can save students information and results, maintain class schedules, etc

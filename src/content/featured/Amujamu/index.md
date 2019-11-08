@@ -1,5 +1,5 @@
 ---
-date: '99'
+date: '01'
 title: 'Amujamu'
 cover: './screenshot.png'
 github: ''
@@ -14,4 +14,4 @@ tech:
 show: 'true'
 ---
 
-A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=brittanychiang.halcyon-vscode), [Package Control](https://packagecontrol.io/packages/Halcyon%20Theme), [Atom Package Manager](https://atom.io/themes/halcyon-syntax), and [npm](https://www.npmjs.com/package/hyper-halcyon-theme).
+It's a team project. We offer a simple way to discover activities, attractions and things to do in Thailand.
