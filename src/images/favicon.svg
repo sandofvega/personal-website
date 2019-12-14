@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 512 512">
+  <title>Logo</title>
+  <g id="Logo">
+    <g>
+      <polygon
+        id="Shape"
+        fill="#0D1430"
+        points="256 0 0 128 0 384 256 512 512 384 512 128"
+      />
+      <text x="50" y="350" font-size="300" font-weight="bolder" fill="#64FFDA" font-family="Arial, Helvetica, sans-serif">SV</text>
+    </g>
+  </g>
+</svg>
+
+<!-- https://www.favicon-generator.org/  -->

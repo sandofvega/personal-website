@@ -33,7 +33,7 @@ module.exports = {
   ],
 
   navLinks: [
-    /*{
+    {
       name: 'About',
       url: '/#about',
     },
@@ -48,7 +48,7 @@ module.exports = {
     {
       name: 'Contact',
       url: '/#contact',
-    },*/
+    },
   ],
 
   navHeight: 100,
