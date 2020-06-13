@@ -9,7 +9,7 @@ tech:
   - MySQL
   - Gulp
   - Git
-show: 'true'
+show: 'false'
 ---
 
 All country visa processing website.
