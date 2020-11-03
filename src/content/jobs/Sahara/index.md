@@ -1,6 +1,6 @@
 ---
 date: '2018-01-01'
-title: 'Laravel Developer'
+title: 'Software Engineer'
 company: 'Sahara IT'
 location: 'Jatrabari, Dhaka'
 range: 'Jan - Nov 2018'
