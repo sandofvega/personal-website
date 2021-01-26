@@ -1,6 +1,3 @@
-<div align="center">
-  <img alt="Logo" src="https://raw.githubusercontent.com/bchiang7/v4/master/src/images/logo.png" width="100" />
-</div>
 <p align="center">
   <a href="https://app.netlify.com/sites/sandofvega/deploys" target="_blank">
     <img src="https://api.netlify.com/api/v1/badges/a1b37b2c-5a75-4fa8-bba8-63122acccfd4/deploy-status" alt="Netlify Status" />
