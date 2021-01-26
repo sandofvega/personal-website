@@ -3,7 +3,7 @@ date: '2017-11-01'
 title: 'Laravel Bdgeocode'
 image: ''
 github: ''
-external: 'https://packagist.org/packages/sandofvega/bdgeocode'
+external: 'https://github.com/sandofvega/laravel-bangladesh-geocode'
 tech:
   - PHP OOP
 show: 'true'
