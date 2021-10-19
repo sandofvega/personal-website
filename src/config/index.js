@@ -4,15 +4,15 @@ module.exports = {
     'Brittany Chiang is a software engineer based in Boston, MA who specializes in developing (and occasionally designing) exceptional, high-quality websites and applications.',
   siteKeywords:
     'Brittany Chiang, Brittany, Chiang, bchiang7, software engineer, front-end engineer, web developer, javascript, northeastern',
-  siteUrl: 'https://brittanychiang.com',
+  siteUrl: 'https://sandofvega.com',
   siteLanguage: 'en_US',
   googleAnalyticsID: 'UA-111323376-1',
   googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
   name: 'Brittany Chiang',
-  location: 'Boston, MA',
+  location: 'Dhaka, Bangladesh',
   email: 'sandofvega@gmail.com',
-  github: 'https://github.com/bchiang7',
-  twitterHandle: '@bchiang7',
+  github: 'https://github.com/sandofvega',
+  twitterHandle: '@sandofvega',
   socialMedia: [
     {
       name: 'Github',

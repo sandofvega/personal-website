@@ -112,9 +112,11 @@ const ShowMoreButton = styled(Button)`
 `;
 
 const Projects = ({ data }) => {
+  // console.log(data);
   const [showMore, setShowMore] = useState(false);
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
+
   useEffect(() => {
     sr.reveal(revealTitle.current, srConfig());
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
@@ -124,6 +126,7 @@ const Projects = ({ data }) => {
   const projects = data.filter(({ node }) => node.frontmatter.show === 'true');
   const firstSix = projects.slice(0, GRID_LIMIT);
   const projectsToShow = showMore ? projects : firstSix;
+  // console.log(projects);
 
   return (
     <ProjectsContainer>
@@ -134,6 +137,7 @@ const Projects = ({ data }) => {
             projectsToShow.map(({ node }, i) => {
               const { frontmatter, html } = node;
               const { github, external, title, tech } = frontmatter;
+
               return (
                 <CSSTransition
                   key={i}

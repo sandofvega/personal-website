@@ -7,7 +7,6 @@ external: ''
 tech:
   - Laravel
   - MySQL
-  - Git
 show: 'true'
 ---
 

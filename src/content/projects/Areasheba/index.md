@@ -3,7 +3,7 @@ date: '2017-11-01'
 title: 'Areasheba'
 image: ''
 github: ''
-external: 'https://areasheba.com/'
+external: ''
 tech:
   - Laravel
   - Bootstrap 4

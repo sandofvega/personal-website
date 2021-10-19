@@ -2,14 +2,20 @@
 title: 'About Me'
 avatar: './me.jpg'
 skills:
-  - HTML & (S)CSS
-  - JavaScript (ES6+)
+  - Node.js
   - Laravel
+  - React
   - Vue
-  - Nuxtjs
-  - Express
-  - GraphQL
-  - NativeScript
+  - Redis
+  - MySQL
+  - PostgreSQL
+  - MongoDB
+  - Nginx
+  - Microservice
+  - Docker
+  - Ansible
+  - Prometheus
+  - Jenkins
 ---
 
 Hello! I'm Yasin, a software engineer based in Dhaka, BD who enjoys building things that live on the internet. I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces with efficient and modern backends.
