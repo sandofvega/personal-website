@@ -1,14 +1,14 @@
 module.exports = {
   siteTitle: 'Sand Of Vega | Web Developer',
   siteDescription:
-    'Brittany Chiang is a software engineer based in Boston, MA who specializes in developing (and occasionally designing) exceptional, high-quality websites and applications.',
+    'Sand Of Vega is a software engineer based in Boston, MA who specializes in developing (and occasionally designing) exceptional, high-quality websites and applications.',
   siteKeywords:
-    'Brittany Chiang, Brittany, Chiang, bchiang7, software engineer, front-end engineer, web developer, javascript, northeastern',
+    'Sand Of Vega, Yasin Arafat, Yasin, Arafat, sandofvega, software engineer, web developer',
   siteUrl: 'https://sandofvega.com',
   siteLanguage: 'en_US',
-  googleAnalyticsID: 'UA-111323376-1',
+  googleAnalyticsID: 'G-BTWB2MGYNC',
   googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
-  name: 'Brittany Chiang',
+  name: 'Sand Of Vega',
   location: 'Dhaka, Bangladesh',
   email: 'sandofvega@gmail.com',
   github: 'https://github.com/sandofvega',
