@@ -1,14 +1,15 @@
 ---
-date: '01'
+date: '03'
 title: 'Amujamu'
 cover: './screenshot.png'
 github: ''
 external: 'https://amujamu.com/'
 tech:
   - Laravel
-  - Vuejs
-  - Nuxtjs
+  - Vue.js
+  - Nuxt.js
   - PostgreSQL
+  - Docker
 show: 'true'
 ---
 

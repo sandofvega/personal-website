@@ -5,8 +5,12 @@ cover: './screenshot.png'
 github: ''
 external: 'https://aleshacard.com/'
 tech:
-  - Laravel
+  - Node.js
+  - Express.js
+  - Vue.js
+  - Nuxt.js
   - MySQL
+  - VPS
 show: 'true'
 ---
 

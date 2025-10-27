@@ -1,7 +1,7 @@
 module.exports = {
-  siteTitle: 'Sand Of Vega | Web Developer',
+  siteTitle: 'Yasin Arafat | Software Engineer',
   siteDescription:
-    'Sand Of Vega is a software engineer based in Boston, MA who specializes in developing (and occasionally designing) exceptional, high-quality websites and applications.',
+    'Yasin Arafat is a software engineer based in Dhaka, Bangladesh specializing in building (and occasionally designing) exceptional, high-quality applications.',
   siteKeywords:
     'Sand Of Vega, Yasin Arafat, Yasin, Arafat, sandofvega, software engineer, web developer',
   siteUrl: 'https://sandofvega.com',
@@ -10,7 +10,7 @@ module.exports = {
   googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
   name: 'SandOfVega',
   location: 'Dhaka, Bangladesh',
-  email: 'sandofvega@gmail.com',
+  email: 'hello@yasinarafat.dev',
   github: 'https://github.com/sandofvega',
   twitterHandle: '@sandofvega',
   socialMedia: [
