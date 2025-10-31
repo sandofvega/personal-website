@@ -4,7 +4,7 @@ title: 'Software Engineer'
 company: 'Prochito ITS'
 location: 'Banani, Dhaka'
 range: 'July 2017 - May 2020'
-url: 'http://its.prochito.com/'
+url: ''
 ---
 
 - Designed and maintained backend systems for Amujamu, a travel booking platform in Thailand.

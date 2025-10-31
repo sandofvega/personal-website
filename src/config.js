@@ -11,12 +11,16 @@ module.exports = {
       url: 'https://www.linkedin.com/in/sandofvega',
     },
     {
+      name: 'StackOverflow',
+      url: 'https://stackoverflow.com/users/9111020/yasin-arafat?tab=profile',
+    },
+    // {
+    //   name: 'LeetCode',
+    //   url: 'https://leetcode.com/u/sandofvega/',
+    // },
+    {
       name: 'Instagram',
       url: 'https://www.instagram.com/sandofvega',
-    },
-    {
-      name: 'Twitter',
-      url: 'htts://twitter.com/sandofvega',
     },
   ],
 

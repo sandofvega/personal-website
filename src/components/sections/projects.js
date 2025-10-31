@@ -229,23 +229,27 @@ const Projects = () => {
           </div>
 
           <h3 className="project-title">
-            <a href={external} target="_blank" rel="noreferrer">
-              {title}
-            </a>
+            {external ? (
+              <a href={external} target="_blank" rel="noreferrer">
+                {title}
+              </a>
+            ) : (
+              title
+            )}
           </h3>
 
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
         </header>
 
-        <footer>
-          {/* {tech && (
+        {/* <footer>
+          {tech && (
             <ul className="project-tech-list">
               {tech.map((tech, i) => (
                 <li key={i}>{tech}</li>
               ))}
             </ul>
-          )} */}
-        </footer>
+          )}
+        </footer> */}
       </div>
     );
   };
