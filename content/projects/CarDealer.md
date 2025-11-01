@@ -8,7 +8,6 @@ tech:
   - Django
   - Scrapy
   - MySQL
-  - Oxylabs.io
 showInProjects: true
 ---
 

@@ -1,4 +1,0 @@
-* uncomment Tech stack in featured projects.js and projects sections.js
-    - take tech variable out of frontmatter
-
-* remove display:none from menu.js and nav.js  to show the resume button.

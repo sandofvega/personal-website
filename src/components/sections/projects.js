@@ -200,7 +200,7 @@ const Projects = () => {
 
   const projectInner = node => {
     const { frontmatter, html } = node;
-    const { github, external, title } = frontmatter;
+    const { github, external, title, tech } = frontmatter;
 
     return (
       <div className="project-inner">
@@ -241,7 +241,7 @@ const Projects = () => {
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
         </header>
 
-        {/* <footer>
+        <footer>
           {tech && (
             <ul className="project-tech-list">
               {tech.map((tech, i) => (
@@ -249,7 +249,7 @@ const Projects = () => {
               ))}
             </ul>
           )}
-        </footer> */}
+        </footer>
       </div>
     );
   };

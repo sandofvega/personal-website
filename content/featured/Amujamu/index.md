@@ -10,7 +10,7 @@ tech:
   - Vue.js
   - Nuxt.js
   - PostgreSQL
-  - Docker
+  - MongoDB
 ---
 
 A travel platform enabling users to discover and book attractions, activities, and experiences across Thailand.

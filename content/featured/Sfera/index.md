@@ -10,6 +10,7 @@ tech:
   - Yii
   - React
   - TypeScript
+  - MySQL
   - Docker
 ---
 

@@ -355,7 +355,7 @@ const Featured = () => {
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, github, cover, cta } = frontmatter;
+            const { external, title, github, cover, cta, tech } = frontmatter;
             const image = getImage(cover);
 
             return (
@@ -373,13 +373,13 @@ const Featured = () => {
                       dangerouslySetInnerHTML={{ __html: html }}
                     />
 
-                    {/* {tech.length && (
+                    {tech.length && (
                       <ul className="project-tech-list">
                         {tech.map((tech, i) => (
                           <li key={i}>{tech}</li>
                         ))}
                       </ul>
-                    )} */}
+                    )}
 
                     <div className="project-links">
                       {cta && (

@@ -6,10 +6,11 @@ external: ''
 tech:
   - Node.js
   - Express.js
-  - Vue.js
-  - Nuxt.js
+  - React
+  - Next.js
   - MySQL
   - VPS
+  - Jenkins
 showInProjects: true
 ---
 
