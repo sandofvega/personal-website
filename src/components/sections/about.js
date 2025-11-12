@@ -139,7 +139,7 @@ const About = () => {
     'Docker',
     'AWS',
     'MySQL',
-    'PostgreSQL',
+    'MongoDB',
   ];
 
   return (
