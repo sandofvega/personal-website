@@ -4,11 +4,10 @@
 <h1 align="center">
   Yasin Arafat
 </h1>
-<p align="center">
-  <a href="https://app.netlify.com/sites/sandofvega/deploys" target="_blank">
-    <img src="https://api.netlify.com/api/v1/badges/a1b37b2c-5a75-4fa8-bba8-63122acccfd4/deploy-status" alt="Netlify Status" />
-  </a>
-</p>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a1b37b2c-5a75-4fa8-bba8-63122acccfd4/deploy-status)](https://app.netlify.com/sites/sandofvega/deploys)
+&nbsp;
+[![Better Stack](https://uptime.betterstack.com/status-badges/v1/monitor/29nfa.svg)](https://uptime.betterstack.com/?utm_source=status_badge)
 
 ## 🛠 Installation & Set Up
 
