@@ -145,5 +145,18 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [process.env.GATSBY_GOOGLE_ANALYTICS_MEASUREMENT_ID],
+        gtagConfig: {
+          send_page_view: true,
+        },
+        pluginConfig: {
+          head: true,
+          respectDNT: true,
+        },
+      },
+    },
   ],
 };

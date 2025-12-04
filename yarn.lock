@@ -1006,6 +1006,11 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.15.4":
+  version "7.28.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.28.4.tgz#a70226016fabe25c5783b2f22d3e1c9bc5ca3326"
+  integrity sha512-Q/N6JNWvIvPnLDvjlE1OUBLPQHH6l3CltCEsHIujp45zQUSSh8K+gHnaEX45yAT1nyngnINhvWtzN+Nb9D8RAQ==
+
 "@babel/standalone@^7.12.6":
   version "7.14.1"
   resolved "https://registry.npmjs.org/@babel/standalone/-/standalone-7.14.1.tgz#2c5f6908f03108583eea75bdcc94eb29e720fbac"
@@ -6064,6 +6069,14 @@ gatsby-page-utils@^1.4.0:
     glob "^7.1.6"
     lodash "^4.17.21"
     micromatch "^4.0.2"
+
+gatsby-plugin-google-gtag@^3:
+  version "3.15.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-3.15.0.tgz#697e0d15c9bd1d4fc4a89d887cf7a3b10ca72adb"
+  integrity sha512-DmpUA+rF6jUb0roXLWlf5j0i7M/djCw7J3n/Xm/TnbHnfCcYPrjtPyBxo4fhz+3k6Um3rzceoYQ3EOsIF9z3Cg==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    minimatch "^3.0.4"
 
 gatsby-plugin-image@^1.4.0:
   version "1.4.0"
