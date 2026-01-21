@@ -7,7 +7,7 @@ external: ''
 cta: ''
 tech:
   - Node.js
-  - Express.js
+  - Nest.js
   - React
   - Next.js
   - MySQL

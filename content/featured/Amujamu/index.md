@@ -6,9 +6,9 @@ github: ''
 external: ''
 cta: ''
 tech:
-  - Laravel
+  - Node.js
+  - Express.js
   - Vue.js
-  - Nuxt.js
   - PostgreSQL
   - MongoDB
 ---
