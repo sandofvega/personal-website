@@ -241,7 +241,7 @@ const Projects = () => {
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
         </header>
 
-        <footer>
+        {/* <footer>
           {tech && (
             <ul className="project-tech-list">
               {tech.map((tech, i) => (
@@ -249,7 +249,7 @@ const Projects = () => {
               ))}
             </ul>
           )}
-        </footer>
+        </footer> */}
       </div>
     );
   };
