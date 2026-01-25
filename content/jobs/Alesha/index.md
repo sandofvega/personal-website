@@ -7,6 +7,6 @@ range: 'April 2021 - November 2021'
 url: ''
 ---
 
-- Developed and deployed Alesha Health and Alesha Card.
+- Developed and deployed production-grade healthcare and fintech platforms.
 - Managed cloud deployments on AWS and automated CI/CD pipelines.
 - Mentored junior developers and led best-practice knowledge-sharing sessions.
