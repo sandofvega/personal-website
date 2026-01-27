@@ -3,7 +3,7 @@ date: '3'
 title: ' Senior Software Engineer'
 company: 'Alesha Solutions'
 location: 'Banani, Dhaka'
-range: 'April 2021 - November 2021'
+range: 'April 2021 - December 2021'
 url: ''
 ---
 

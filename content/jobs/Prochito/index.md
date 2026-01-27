@@ -3,7 +3,7 @@ date: '1'
 title: 'Software Engineer'
 company: 'Prochito ITS'
 location: 'Banani, Dhaka'
-range: 'July 2017 - May 2020'
+range: 'January 2018 - February 2020'
 url: ''
 ---
 

@@ -3,7 +3,7 @@ date: '4'
 title: ' Senior Software Engineer'
 company: 'Scopic'
 location: 'Massachusetts, USA'
-range: 'January 2022 - September 2025'
+range: 'January 2022 - December 2025'
 url: 'https://scopicsoftware.com/'
 ---
 
