@@ -9,4 +9,4 @@ url: ''
 
 - Developed core backend functionality for Amujamu, a travel booking platform in Thailand.
 - Integrated third-party APIs for payments, Email, SMS and Maps.
-- Collaborated closely with frontend teams (Vue/Nuxt) to deliver customer-facing features.
+- Collaborated closely with frontend teams to deliver customer-facing features.
