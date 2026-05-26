@@ -111,6 +111,12 @@ const GlobalStyle = createGlobalStyle`
     grid-template-columns: 100%;
   }
 
+  header {
+    @media (min-width: 769px) {
+      width: calc(100% - var(--chat-panel-width));
+    }
+  }
+
   main {
     margin: 0 auto;
     width: 100%;

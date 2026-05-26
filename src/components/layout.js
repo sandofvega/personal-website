@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
-import { Head, Loader, Nav, Social, Email, Footer } from '@components';
+import { Head, Loader, Nav, Social, Email, VirtualTwin, Footer } from '@components';
 import { GlobalStyle, theme } from '@styles';
 
 const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  @media (min-width: 769px) {
+    padding-right: var(--chat-panel-width);
+  }
 `;
 
 const Layout = ({ children, location }) => {
@@ -65,6 +69,7 @@ const Layout = ({ children, location }) => {
               <Nav isHome={isHome} />
               <Social isHome={isHome} />
               <Email isHome={isHome} />
+              <VirtualTwin isHome={isHome} />
 
               <div id="content">
                 {children}

@@ -10,13 +10,15 @@ const StyledSideElement = styled.div`
   position: fixed;
   bottom: 0;
   left: ${props => (props.orientation === 'left' ? '40px' : 'auto')};
-  right: ${props => (props.orientation === 'left' ? 'auto' : '40px')};
+  right: ${props =>
+    props.orientation === 'left' ? 'auto' : 'calc(40px + var(--chat-panel-width))'};
   z-index: 10;
   color: var(--light-slate);
 
   @media (max-width: 1080px) {
     left: ${props => (props.orientation === 'left' ? '20px' : 'auto')};
-    right: ${props => (props.orientation === 'left' ? 'auto' : '20px')};
+    right: ${props =>
+      props.orientation === 'left' ? 'auto' : 'calc(20px + var(--chat-panel-width))'};
   }
 
   @media (max-width: 768px) {
