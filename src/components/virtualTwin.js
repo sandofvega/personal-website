@@ -1,8 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
-import { loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 import { IconLogo, IconHex } from '@components/icons';
 
@@ -179,8 +176,7 @@ const StyledSendButton = styled.button`
   }
 `;
 
-const VirtualTwin = ({ isHome }) => {
-  const [isMounted, setIsMounted] = useState(!isHome);
+const VirtualTwin = () => {
   const [messages, setMessages] = useState([{ role: 'ai', text: DEFAULT_MESSAGE }]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -188,14 +184,6 @@ const VirtualTwin = ({ isHome }) => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const aiHost = process.env.GATSBY_AI_HOST;
-
-  useEffect(() => {
-    if (!isHome || prefersReducedMotion) {
-      return undefined;
-    }
-    const timeout = setTimeout(() => setIsMounted(true), loaderDelay);
-    return () => clearTimeout(timeout);
-  }, [isHome, prefersReducedMotion]);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({
@@ -257,7 +245,7 @@ const VirtualTwin = ({ isHome }) => {
     </StyledAvatar>
   );
 
-  const panel = (
+  return (
     <StyledPanel aria-label="Virtual Twin chat">
       <StyledHeader>
         <h2>Virtual Twin</h2>
@@ -299,24 +287,6 @@ const VirtualTwin = ({ isHome }) => {
       </StyledForm>
     </StyledPanel>
   );
-
-  if (prefersReducedMotion) {
-    return panel;
-  }
-
-  return (
-    <TransitionGroup component={null}>
-      {isMounted && (
-        <CSSTransition classNames={isHome ? 'fade' : ''} timeout={isHome ? loaderDelay : 0}>
-          {panel}
-        </CSSTransition>
-      )}
-    </TransitionGroup>
-  );
-};
-
-VirtualTwin.propTypes = {
-  isHome: PropTypes.bool,
 };
 
 export default VirtualTwin;

@@ -87,7 +87,7 @@ const Layout = ({ children, location }) => {
                   </div>
                 </StyledContent>
               </SiteColumn>
-              <VirtualTwin isHome={isHome} />
+              <VirtualTwin />
             </AppShell>
           )}
         </ThemeProvider>
