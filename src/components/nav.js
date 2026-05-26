@@ -11,11 +11,15 @@ import { IconLogo, IconHex } from '@components/icons';
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 11;
   padding: 0px 50px;
   width: 100%;
+
+  @media (min-width: 769px) {
+    position: sticky;
+  }
   height: var(--nav-height);
   background-color: rgba(10, 25, 47, 0.85);
   filter: none !important;

@@ -9,7 +9,7 @@ const DEFAULT_MESSAGE =
 const MAX_HISTORY_PAIRS = 10;
 
 const StyledPanel = styled.aside`
-  display: none;
+  display: flex;
   flex-shrink: 0;
   flex-direction: column;
   align-self: flex-start;
@@ -19,10 +19,6 @@ const StyledPanel = styled.aside`
   height: 100vh;
   border-left: 1px solid var(--green);
   background-color: var(--navy);
-
-  @media (min-width: 769px) {
-    display: flex;
-  }
 `;
 
 const StyledHeader = styled.div`

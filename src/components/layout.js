@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import { Head, Loader, Nav, Social, Email, VirtualTwin, Footer } from '@components';
+import { useIsDesktop } from '@hooks';
 import { GlobalStyle, theme } from '@styles';
 
 const AppShell = styled.div`
@@ -24,9 +25,16 @@ const StyledContent = styled.div`
   flex: 1;
 `;
 
+const MobileShell = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
 const Layout = ({ children, location }) => {
   const isHome = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
+  const isDesktop = useIsDesktop();
 
   // Sets target="_blank" rel="noopener noreferrer" on external links
   const handleExternalLinks = () => {
@@ -60,6 +68,21 @@ const Layout = ({ children, location }) => {
     handleExternalLinks();
   }, [isLoading]);
 
+  const chrome = (
+    <>
+      <Nav isHome={isHome} />
+      <Social isHome={isHome} />
+      <Email isHome={isHome} />
+    </>
+  );
+
+  const page = (
+    <div id="content">
+      {children}
+      <Footer />
+    </div>
+  );
+
   return (
     <>
       <Head />
@@ -74,21 +97,19 @@ const Layout = ({ children, location }) => {
 
           {isLoading && isHome ? (
             <Loader finishLoading={() => setIsLoading(false)} />
-          ) : (
+          ) : isDesktop ? (
             <AppShell>
               <SiteColumn>
-                <Nav isHome={isHome} />
-                <Social isHome={isHome} />
-                <Email isHome={isHome} />
-                <StyledContent>
-                  <div id="content">
-                    {children}
-                    <Footer />
-                  </div>
-                </StyledContent>
+                {chrome}
+                <StyledContent>{page}</StyledContent>
               </SiteColumn>
               <VirtualTwin />
             </AppShell>
+          ) : (
+            <MobileShell>
+              {chrome}
+              {page}
+            </MobileShell>
           )}
         </ThemeProvider>
       </div>
