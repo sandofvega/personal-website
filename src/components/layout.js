@@ -4,14 +4,24 @@ import styled, { ThemeProvider } from 'styled-components';
 import { Head, Loader, Nav, Social, Email, VirtualTwin, Footer } from '@components';
 import { GlobalStyle, theme } from '@styles';
 
-const StyledContent = styled.div`
+const AppShell = styled.div`
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+`;
+
+const SiteColumn = styled.div`
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+`;
 
-  @media (min-width: 769px) {
-    padding-right: var(--chat-panel-width);
-  }
+const StyledContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 `;
 
 const Layout = ({ children, location }) => {
@@ -65,17 +75,20 @@ const Layout = ({ children, location }) => {
           {isLoading && isHome ? (
             <Loader finishLoading={() => setIsLoading(false)} />
           ) : (
-            <StyledContent>
-              <Nav isHome={isHome} />
-              <Social isHome={isHome} />
-              <Email isHome={isHome} />
+            <AppShell>
+              <SiteColumn>
+                <Nav isHome={isHome} />
+                <Social isHome={isHome} />
+                <Email isHome={isHome} />
+                <StyledContent>
+                  <div id="content">
+                    {children}
+                    <Footer />
+                  </div>
+                </StyledContent>
+              </SiteColumn>
               <VirtualTwin isHome={isHome} />
-
-              <div id="content">
-                {children}
-                <Footer />
-              </div>
-            </StyledContent>
+            </AppShell>
           )}
         </ThemeProvider>
       </div>

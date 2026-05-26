@@ -13,11 +13,11 @@ const MAX_HISTORY_PAIRS = 10;
 
 const StyledPanel = styled.aside`
   display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 9;
+  flex-shrink: 0;
   flex-direction: column;
+  align-self: flex-start;
+  position: sticky;
+  top: 0;
   width: var(--chat-panel-width);
   height: 100vh;
   border-left: 1px solid var(--green);

@@ -11,7 +11,7 @@ import { IconLogo, IconHex } from '@components/icons';
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 11;
   padding: 0px 50px;
