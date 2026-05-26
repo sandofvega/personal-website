@@ -1,0 +1,127 @@
+---
+description: Gatsby personal site layout, paths, and conventions
+alwaysApply: true
+---
+
+# Project Structure
+
+Gatsby 3 static portfolio (React 17, styled-components). Single-page home at `/`; content lives in Markdown queried at build time.
+
+## Root
+
+| Path | Role |
+|------|------|
+| `gatsby-config.js` | Plugins, `siteMetadata`, filesystem sources |
+| `gatsby-node.js` | Webpack aliases; null-loaders for `scrollreveal` / `animejs` on HTML builds |
+| `gatsby-browser.js` / `gatsby-ssr.js` | Client/SSR hooks |
+| `src/config.js` | Site copy: email, nav links, social URLs, brand colors |
+| `static/` | Files copied as-is (e.g. `og.png`) |
+| `.env` | Optional secrets (see `.env.example`) |
+
+## `src/` — application code
+
+```
+src/
+├── components/     # UI; barrel export in index.js
+│   ├── sections/   # Page sections (hero, about, jobs, featured, projects, contact)
+│   └── icons/      # SVG icon components
+├── pages/          # Gatsby routes (index.js = home)
+├── styles/         # theme, GlobalStyle, mixins, fonts, Prism/transition styles
+├── hooks/          # Shared React hooks (barrel: index.js)
+├── images/         # Assets processed by gatsby-plugin-image / sharp
+├── fonts/          # Calibre & SF Mono (woff/woff2); imported via @fonts alias
+└── utils/          # Helpers (e.g. screen-reader utilities in sr.js)
+```
+
+### Path aliases (`gatsby-node.js`)
+
+Import with `@` prefixes instead of deep relative paths:
+
+- `@components`, `@config`, `@fonts`, `@hooks`, `@images`, `@pages`, `@styles`, `@utils`
+
+Example:
+
+```js
+import { Layout, Hero } from '@components';
+import { GlobalStyle, theme } from '@styles';
+```
+
+### Components
+
+- **`layout.js`**: `ThemeProvider`, global shell (nav, loader, footer, optional `VirtualTwin` desktop panel).
+- **`sections/*`**: One section per homepage anchor (`#about`, `#jobs`, etc.).
+- **`head.js`**: SEO/meta via `react-helmet` + Gatsby `useStaticQuery`.
+- Add new UI under `src/components/` and re-export from `src/components/index.js` when shared.
+
+### Pages
+
+- `src/pages/index.js` composes all homepage sections inside `Layout`.
+- `src/pages/404.js` — not-found page.
+
+## `content/` — Markdown data
+
+Sourced by `gatsby-source-filesystem` + `gatsby-transformer-remark`. Frontmatter drives GraphQL in section components.
+
+```
+content/
+├── jobs/<Company>/index.md    # Experience (Jobs section)
+├── featured/<Slug>/          # index.md + screenshot (Featured section)
+└── projects/*.md             # Project cards (Projects section)
+```
+
+### Frontmatter conventions
+
+**Jobs** (`content/jobs/.../index.md`):
+
+```yaml
+date: '3'          # sort key (string)
+title: '...'
+company: '...'
+location: '...'
+range: '...'
+url: ''            # optional company link
+```
+
+**Featured** (`content/featured/<name>/index.md` + `screenshot.png`):
+
+```yaml
+date: '2'
+title: '...'
+cover: './screenshot.png'
+github: ''
+external: ''
+tech: [Node.js, React]
+```
+
+**Projects** (`content/projects/*.md`):
+
+```yaml
+date: '3'
+title: '...'
+github: 'https://...'
+external: 'https://...'
+tech: [...]
+showInProjects: true   # omit or false to hide from grid
+```
+
+## Styling
+
+- **styled-components** with shared `theme`, `mixins`, and `variables` in `src/styles/`.
+- Section components typically define co-located `styled.*` blocks.
+- Code blocks: Prism via `gatsby-remark-prismjs` + `PrismStyles.js`.
+
+## Scripts
+
+- `npm start` — `gatsby develop`
+- `npm run build` / `npm run serve` — production build and preview
+- `npm run format` — Prettier; pre-commit runs lint-staged (Prettier + ESLint on JS)
+
+## Where to change things
+
+| Goal | Location |
+|------|----------|
+| Nav labels / social / colors | `src/config.js` |
+| New homepage section | `src/components/sections/`, wire in `pages/index.js` |
+| Job / project / featured copy | `content/` Markdown |
+| Site title, URL, analytics | `gatsby-config.js`, `.env` |
+| Global layout or twin panel | `src/components/layout.js`, `virtualTwin.js` |
