@@ -110,20 +110,25 @@ const StyledBubble = styled.div`
 const StyledForm = styled.form`
   flex-shrink: 0;
   display: flex;
+  align-items: flex-end;
   gap: 8px;
   padding: 12px 16px;
   border-top: 1px solid var(--lightest-navy);
 `;
 
-const StyledInput = styled.input`
+const StyledTextarea = styled.textarea`
   flex: 1;
-  padding: 10px 12px;
+  min-height: 80px;
+  max-height: 160px;
+  padding: 12px 14px;
   border: 1px solid var(--lightest-navy);
   border-radius: var(--border-radius);
   background-color: var(--light-navy);
   color: var(--lightest-slate);
   font-family: var(--font-sans);
   font-size: var(--fz-md);
+  line-height: 1.5;
+  resize: vertical;
   transition: var(--transition);
 
   &::placeholder {
@@ -145,8 +150,8 @@ const StyledSendButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   padding: 0;
   border: none;
   border-radius: var(--border-radius);
@@ -177,6 +182,8 @@ const VirtualTwin = () => {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const chatEndRef = useRef(null);
+  const inputRef = useRef(null);
+  const wasLoadingRef = useRef(false);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const aiHost = process.env.GATSBY_AI_HOST;
@@ -186,6 +193,13 @@ const VirtualTwin = () => {
       behavior: prefersReducedMotion ? 'auto' : 'smooth',
     });
   }, [messages, isLoading, prefersReducedMotion]);
+
+  useEffect(() => {
+    if (wasLoadingRef.current && !isLoading) {
+      inputRef.current?.focus();
+    }
+    wasLoadingRef.current = isLoading;
+  }, [isLoading]);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -199,6 +213,7 @@ const VirtualTwin = () => {
         { role: 'ai', text: 'Chat is not configured. Please try again later.' },
       ]);
       setInput('');
+      inputRef.current?.focus();
       return;
     }
 
@@ -267,12 +282,19 @@ const VirtualTwin = () => {
       </StyledMessages>
 
       <StyledForm onSubmit={handleSubmit}>
-        <StyledInput
-          type="text"
+        <StyledTextarea
+          ref={inputRef}
           value={input}
           onChange={e => setInput(e.target.value)}
+          onKeyDown={e => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+              e.preventDefault();
+              handleSubmit(e);
+            }
+          }}
           placeholder="Type your message..."
           disabled={isLoading}
+          rows={3}
           aria-label="Type your message"
         />
         <StyledSendButton type="submit" disabled={isLoading} aria-label="Send message">
