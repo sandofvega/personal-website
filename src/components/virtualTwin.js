@@ -30,8 +30,8 @@ const StyledHeader = styled.div`
   h2 {
     margin: 0;
     color: var(--lightest-slate);
-    font-family: var(--font-mono);
-    font-size: var(--fz-lg);
+    font-family: var(--font-sans);
+    font-size: var(--fz-xl);
     font-weight: 600;
     letter-spacing: 0.05em;
   }
@@ -91,7 +91,7 @@ const StyledBubble = styled.div`
   padding: 10px 14px;
   border-radius: var(--border-radius);
   font-family: var(--font-sans);
-  font-size: var(--fz-md);
+  font-size: var(--fz-lg);
   line-height: 1.5;
   white-space: pre-line;
 
@@ -126,7 +126,7 @@ const StyledTextarea = styled.textarea`
   background-color: var(--light-navy);
   color: var(--lightest-slate);
   font-family: var(--font-sans);
-  font-size: var(--fz-md);
+  font-size: var(--fz-lg);
   line-height: 1.5;
   resize: vertical;
   transition: var(--transition);
