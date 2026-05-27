@@ -4,7 +4,7 @@ import { usePrefersReducedMotion } from '@hooks';
 import { IconLogo, IconHex } from '@components/icons';
 
 const DEFAULT_MESSAGE =
-  "Hello! I'm Yasin's Virtual Twin. Ask me anything about his work!";
+  "Hey, I'm the AI version of Yasin.\nAsk me anything from my coding experience to my favorite food.";
 
 const MAX_HISTORY_PAIRS = 10;
 
