@@ -14,6 +14,7 @@ const AppShell = styled.div`
 const SiteColumn = styled.div`
   flex: 1;
   min-width: 0;
+  margin-right: var(--chat-panel-width);
   display: flex;
   flex-direction: column;
   min-height: 100vh;

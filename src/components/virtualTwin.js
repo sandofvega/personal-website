@@ -12,13 +12,15 @@ const StyledPanel = styled.aside`
   display: flex;
   flex-shrink: 0;
   flex-direction: column;
-  align-self: flex-start;
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  z-index: 10;
   width: var(--chat-panel-width);
   height: 100vh;
   border-left: 1px solid var(--green);
   background-color: var(--navy);
+  overscroll-behavior: contain;
 `;
 
 const StyledHeader = styled.div`
@@ -41,6 +43,7 @@ const StyledMessages = styled.div`
   flex: 1;
   min-height: 0;
   overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -181,22 +184,40 @@ const VirtualTwin = () => {
   const [messages, setMessages] = useState([{ role: 'ai', text: DEFAULT_MESSAGE }]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const chatEndRef = useRef(null);
+  const messagesRef = useRef(null);
   const inputRef = useRef(null);
   const wasLoadingRef = useRef(false);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const aiHost = process.env.GATSBY_AI_HOST;
 
-  useEffect(() => {
-    chatEndRef.current?.scrollIntoView({
-      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+  const scrollMessagesToBottom = () => {
+    const container = messagesRef.current;
+    if (!container) return;
+
+    if (prefersReducedMotion) {
+      container.scrollTop = container.scrollHeight;
+    } else {
+      container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' });
+    }
+  };
+
+  const preservePageScroll = callback => {
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    callback();
+    requestAnimationFrame(() => {
+      window.scrollTo(scrollX, scrollY);
     });
+  };
+
+  useEffect(() => {
+    scrollMessagesToBottom();
   }, [messages, isLoading, prefersReducedMotion]);
 
   useEffect(() => {
     if (wasLoadingRef.current && !isLoading) {
-      inputRef.current?.focus();
+      inputRef.current?.focus({ preventScroll: true });
     }
     wasLoadingRef.current = isLoading;
   }, [isLoading]);
@@ -213,7 +234,7 @@ const VirtualTwin = () => {
         { role: 'ai', text: 'Chat is not configured. Please try again later.' },
       ]);
       setInput('');
-      inputRef.current?.focus();
+      inputRef.current?.focus({ preventScroll: true });
       return;
     }
 
@@ -262,7 +283,7 @@ const VirtualTwin = () => {
         <h2>Virtual Twin</h2>
       </StyledHeader>
 
-      <StyledMessages>
+      <StyledMessages ref={messagesRef}>
         {messages.map((msg, i) => {
           const isHuman = msg.role === 'human';
           return (
@@ -278,14 +299,14 @@ const VirtualTwin = () => {
             <StyledBubble $isHuman={false}>...</StyledBubble>
           </StyledMessageRow>
         )}
-        <div ref={chatEndRef} />
       </StyledMessages>
 
       <StyledForm onSubmit={handleSubmit}>
         <StyledTextarea
           ref={inputRef}
           value={input}
-          onChange={e => setInput(e.target.value)}
+          onChange={e => preservePageScroll(() => setInput(e.target.value))}
+          onFocus={() => preservePageScroll(() => {})}
           onKeyDown={e => {
             if (e.key === 'Enter' && !e.shiftKey) {
               e.preventDefault();
